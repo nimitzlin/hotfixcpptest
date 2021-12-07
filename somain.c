@@ -14,3 +14,9 @@ int main()
         v1print("hello again\n");
         return 0;
 }
+
+
+//gcc -shared -g -fPIC -o lib1.so lib1.c
+//gcc -shared -g -fPIC -o lib2.so lib2.c
+
+gcc -g -o main main.c lib1.so -ldl -Wl,-rpath=./
